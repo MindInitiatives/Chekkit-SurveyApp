@@ -1,0 +1,6 @@
+export const ActionTypes = {
+    GET_QUESTIONS : "GET_QUESTIONS",
+    SELECT_ANSWER : "SELECT_ANSWER",
+    SURVEY_ERROR : "SURVEY_ERROR",
+    START_SURVEY : "START_SURVEY"
+}
