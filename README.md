@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Introduction
 
-Responsive Quiz App made with React, [Open Trivia DB](https://opentdb.com/) and styled-components.
+Responsive Survey App made with React, [Redux](https://redux.js.org/), [Open Trivia DB](https://opentdb.com/) and styled-components.
 
 ![preview](https://github.com/MindInitiatives/Chekkit-SurveyApp/blob/main/screenshot.png)
 
