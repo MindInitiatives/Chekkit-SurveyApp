@@ -17,8 +17,8 @@ const Result = ({pts, ttl}) => {
 
     return (
         <>
-            <Title>Result</Title>
-            <Points>You answered {pts} correctly out of {ttl}!</Points>
+            <Title>Your Result</Title>
+            <Points>You answered {pts} correctly out of {ttl} Questions!</Points>
             <Button onClick={refreshPage}>Retry</Button>
         </>
     )

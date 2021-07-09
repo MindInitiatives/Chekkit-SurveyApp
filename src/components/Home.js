@@ -27,8 +27,9 @@ class Home extends Component {
         
     return (
         <Intro>
-            <h1>Take the quiz.</h1>
-            <h4>Whenever, you want.</h4>
+            <h1>Chekkit Survey</h1>
+            <h4>You will be Subjected to 10 Trivia Questions and at the end of the Survey you will get your Result</h4>
+            <h5>Click on the Button to Begin. Goodluck!!!</h5>
             <Button onClick={this.startQuiz} css={btnCSS}>Begin</Button>
         </Intro>
     )

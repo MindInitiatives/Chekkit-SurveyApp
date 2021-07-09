@@ -12,7 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Responsive Quiz App made with React, [Open Trivia DB](https://opentdb.com/) and styled-components.
 
-![preview](https://github.com/MindInitiatives/Chekkit-SurveyApp/blob/master/screenshot.png)
+![preview](https://github.com/MindInitiatives/Chekkit-SurveyApp/blob/main/screenshot.png)
 
 # Live Demo
 
@@ -34,4 +34,4 @@ $ npm start
 
 ## **License**
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [`LICENSE`](https://github.com/MindInitiatives/Chekkit-SurveyApp/blob/master/LICENSE) file for details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [`LICENSE`](https://github.com/MindInitiatives/Chekkit-SurveyApp/blob/main/LICENSE) file for details.
