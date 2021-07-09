@@ -11,14 +11,14 @@ const Points = styled.p`
     margin-bottom: 3em;
 `;
 
-const Result = ({pts}) => {
+const Result = ({pts, ttl}) => {
 
     const refreshPage = () => window.location.reload();
 
     return (
         <>
-            <Title>Game Over</Title>
-            <Points>You did {pts} out of 10!</Points>
+            <Title>Result</Title>
+            <Points>You answered {pts} correctly out of {ttl}!</Points>
             <Button onClick={refreshPage}>Retry</Button>
         </>
     )

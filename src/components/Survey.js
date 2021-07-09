@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import { connect } from "react-redux";
-import { useDispatch, useSelector } from "react-redux";
 import { getQuestions, selectAnswer } from "../redux/actions/surveyActions";
-import { ActionTypes } from "../redux/constants/action-types";
 import Result from './Result';
 import PropTypes from 'prop-types'
 
@@ -26,11 +24,11 @@ const Options = styled.div`
 
 const Option = styled.button`
     display: block;
-    border: 1px solid #616A94;
+    border: 1px solid #37f3aa;
     border-radius: 15px;
     padding: 15px 30px;
     text-decoration: none;
-    color: #616A94;
+    color: #37f3aa;
     background-color: #161A31;
     transition: 0.3s;
     font-size: 1em;
@@ -42,7 +40,7 @@ const Option = styled.button`
     @media screen and (min-width: 1180px) {
         &:hover {
             color: white;
-            background-color: #616A94;
+            background-color: #37f3aa;
         }
     }
 `;
@@ -68,7 +66,7 @@ class Survey extends Component {
     render () {
 
         const {questions, number, score} = this.props.allQuestions;
-        
+
         return (
         <QuizWindow>
             { 
@@ -91,7 +89,7 @@ class Survey extends Component {
 
             }
             {
-                number === 10 && <Result pts={score} />
+                number === 10 && <Result pts={score} ttl={number} />
             }
         </QuizWindow>
     )
