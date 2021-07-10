@@ -5,7 +5,8 @@ const initialState = {
     questions : [],
     loading : true,
     score : null,
-    number : null
+    number : null,
+    responses : []
 }
 
 const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
@@ -34,7 +35,8 @@ export const surveyReducer = (state = initialState, {type, payload}) => {
             ...state, 
             loading: false,
             score: state.questions[state.number].answer === payload ? ++state.score : state.score,
-            number : state.number + 1
+            number : state.number + 1,
+            responses : [...state.responses, payload]
         };
 
         case ActionTypes.START_SURVEY:
