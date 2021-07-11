@@ -43,31 +43,36 @@ const WrongAnswer = styled.p`
     border-radius: 15px;
     padding: 15px 30px;
     text-decoration: none;
-    background-color: red;
-    transition: 0.3s;
+    background-color: #ff0000;
     font-size: 1em;
     outline: none;
-    user-select: none;
-    margin-top: 1em;
-    
-`;
+    margin-top: 1em
+`
 
-const btnCSS = css`
-    margin-bottom: 4em;
-`;
-
+const btnCSS = {
+    marginBottom: "4em"
+}
 
 const Result = ({pts, ttl}) => {
 
 
     const refreshPage = () => window.location.reload();
-    const responses = useSelector(state => state.allQuestions.responses);
+    const selections = useSelector(state => state.allQuestions.responses);
     const questions  = useSelector(state => state.allQuestions.questions);
-    const correctAnswers = [];
+    const theQuestions = [];
     questions.forEach(data => {
-        correctAnswers.push(data.answer)
+        theQuestions.push(data.question)
     });
-    console.log(correctAnswers)
+    const theAnswers = [];
+    questions.forEach(data => {
+        theAnswers.push(data.answer)
+    });
+    const correctAnswers = [];
+    selections.forEach(data => {
+        correctAnswers.push(data === [...questions, questions.answer])
+    })
+    const responses = theQuestions.map((e, i) => e + `<br/><br/> You Selected : ` + selections[i]);
+    const correctResponses = theQuestions.map((e, i) => e + `<br/><br/> You Selected : ` + theAnswers[i]);
     return (
         <>
             <Title>Your Responses</Title>
@@ -75,11 +80,14 @@ const Result = ({pts, ttl}) => {
             <Answers>
             {
                         responses
-                        .map((item, index) => (
-                            <Answer key={index} dangerouslySetInnerHTML={{ __html: item }}></Answer>
-                        ))}
+                        .map((item, index) => {
+                            if (index !== 0 && item === correctResponses[index]){
+                            return <Answer key={index} dangerouslySetInnerHTML={{ __html: item }}></Answer>;
+                        }
+                        return <WrongAnswer key={index} dangerouslySetInnerHTML={{ __html: item }}></WrongAnswer>
+                    })}
             </Answers>
-            <Button onClick={refreshPage} css={btnCSS}>Retry</Button>
+            <Button onClick={refreshPage} style={btnCSS}>Retry</Button>
         </>
     )
 }
